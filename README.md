@@ -7,7 +7,13 @@ Articly merupakan Website Content Management System yang nantinya dapat menyedia
 
 ### ⚠️ Persyaratan yang dibutuhkan
 
-
+- PHP Versi 7.4 ke-atas
+- Web Browser (Google Chrome, Firefox, Microsoft Edge & Lainnya)
+- XAMPP atau software web server lainnya
+- Git Versi 2.33.0 ke-atas
+- Composer Versi 2.1.8 ke-atas
+- NodeJS Versi 14.18.0 LTS ke-atas
+- Jaringan Internet
 
 ### 📕 Panduan Installasi
 
@@ -15,6 +21,13 @@ Articly merupakan Website Content Management System yang nantinya dapat menyedia
 
 ### 👤 Default Account
 
+Administrator Account
+- Username : administrator@articly.com
+- Password : 1234567890
+
+User Account
+- Username : garlockhart@articly.com
+- Password : 1234567890
 
 
 ### 🧑 Dikembangkan oleh <a href="https://www.garlockhart.com">Garly Nugraha</a>
