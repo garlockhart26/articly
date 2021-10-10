@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PostCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +26,6 @@ Route::group(['prefix' => 'master', 'middleware' => ['auth']], function(){
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
     Route::group(['middleware' => ['role:Administrator']], function () {
-        Route::resource('/category', CategoryController::class);
+        Route::resource('/category', PostCategoryController::class);
     });
 });
