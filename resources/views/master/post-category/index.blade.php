@@ -35,7 +35,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($post-category as $show)
+                                        @foreach ($post_category as $show)
                                             <tr>
                                                 <th>{{ $show->name }}</th>
                                                 <th>
