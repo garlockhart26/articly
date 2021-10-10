@@ -14,8 +14,8 @@ class PostCategoryController extends Controller
      */
     public function index()
     {
-        $categories = PostCategory::all();
-        return view('master.post-category.index',['categories'=> $categories]);
+        $post_category = PostCategory::all();
+        return view('master.post-category.index',['post_category'=> $post_category]);
     }
 
     /**
