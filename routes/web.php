@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Post;
+use App\Http\Controllers\PostTagController;
 use App\Http\Controllers\PostCategoryController;
 
 /*
@@ -27,5 +29,7 @@ Route::group(['prefix' => 'master', 'middleware' => ['auth']], function(){
 
     Route::group(['middleware' => ['role:Administrator']], function () {
         Route::resource('/post-category', PostCategoryController::class);
+        Route::resource('/post-tag', PostTagController::class);
+        Route::resource('/post', PostController::Class);
     });
 });
