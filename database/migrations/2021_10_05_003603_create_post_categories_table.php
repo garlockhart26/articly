@@ -15,6 +15,10 @@ class CreatePostCategoriesTable extends Migration
     {
         Schema::create('post_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
+            $table->string('keywords');
+            $table->text('meta_desc');
             $table->timestamps();
         });
     }
