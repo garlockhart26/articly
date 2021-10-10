@@ -26,6 +26,6 @@ Route::group(['prefix' => 'master', 'middleware' => ['auth']], function(){
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
     Route::group(['middleware' => ['role:Administrator']], function () {
-        Route::resource('/category', PostCategoryController::class);
+        Route::resource('/post-category', PostCategoryController::class);
     });
 });
