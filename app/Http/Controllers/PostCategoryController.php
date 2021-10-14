@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\PostCategory;
 
 class PostCategoryController extends Controller
@@ -15,7 +16,7 @@ class PostCategoryController extends Controller
     public function index()
     {
         $post_category = PostCategory::all();
-        return view('master.post-category.index',['post_category'=> $post_category]);
+        return view('master.post-category.index', ['post_category' => $post_category]);
     }
 
     /**
@@ -25,7 +26,7 @@ class PostCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('master.post-category.create');
     }
 
     /**
@@ -36,7 +37,14 @@ class PostCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = new PostCategory();
+        $category->name = $request->name;
+        $category->slug = Str::slug($request->name);
+        $category->keywords = $request->keywords;
+        $category->meta_desc = $request->meta_desc;
+        $category->save();
+
+        return redirect()->route('post-category.index')->with('success', 'Post Category created successfully.');
     }
 
     /**
@@ -81,6 +89,8 @@ class PostCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $PostCategory = PostCategory::findOrFail($id);
+        $PostCategory->delete();
+        return redirect()->route("post-category.index")->with('success', 'Post Category deleted successfully.');
     }
 }
