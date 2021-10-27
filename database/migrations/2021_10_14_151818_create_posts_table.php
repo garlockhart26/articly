@@ -23,7 +23,7 @@ class CreatePostsTable extends Migration
                 ->constrained()
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->string('cover');
+            $table->string('thumbnail');
             $table->string('title');
             $table->string('slug');
             $table->longText('desc');
